@@ -4,8 +4,13 @@ const changeInput = () => {
 	const input = document.querySelector('.form-control');
 
 	const buttonSave = document.querySelector('.btn-primary');
+	console.log('buttonSave', buttonSave);
+
+	const buttonReset = document.querySelector('.btn-warning');
+	console.log('buttonReset', buttonReset);
 
 	buttonSave.removeAttribute('disabled');
+	buttonReset.removeAttribute('disabled');
 
 	const inputValue = input.value;
 
@@ -17,9 +22,12 @@ const deleteInputValue = () => {
 
 	const buttonSave = document.querySelector('.btn-primary');
 
+	const buttonReset = document.querySelector('.btn-warning');
+
 	input.value = '';
 
 	buttonSave.setAttribute('disabled', '');
+	buttonReset.setAttribute('disabled', '');
 };
 
 const changeTaskStatus = (e, user) => {

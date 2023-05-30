@@ -4,6 +4,7 @@ import {
 	createInput,
 	createButtons,
 	createTable,
+	addItem,
 	addNumberRow,
 } from './modules/createElements.js';
 
@@ -21,11 +22,12 @@ import {
 	changeTaskStatus,
 } from './modules/events.js';
 
-const user = prompt('Ваше имя:', '');
+
 {
-	const init = () => {
-		console.log('user-2', user);
-		createTitle(),
+	const user = prompt('Ваше имя:', '');
+
+	const init = (user) => {
+		createTitle(user),
 
 			createForm(),
 
@@ -43,6 +45,13 @@ const user = prompt('Ваше имя:', '');
 			e.preventDefault();
 			changeInput();
 			setItemStorage(user);
+		});
+
+		const buttonSave = document.querySelector('.btn-primary');
+
+		buttonSave.addEventListener('click', (e) => {
+			e.preventDefault();
+			addItem(inputValue);
 		});
 
 		const buttonReset = document.querySelector('.btn-warning');
@@ -69,5 +78,5 @@ const user = prompt('Ваше имя:', '');
 
 	};
 
-	init();
+	init(user);
 };

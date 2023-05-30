@@ -3,9 +3,14 @@ import { deleteInputValue } from './events.js';
 const container = document.querySelector('.app-container');
 container.classList.add('vh-100', 'w-100', 'd-flex', 'align-items-center', 'justify-content-center', 'flex-column');
 
-const createTitle = () => {
+const createTitle = (user) => {
 	const title = document.createElement('h3');
-	title.textContent = 'Todo App';
+
+	if (user !== null) {
+		title.textContent = `Todo App - ${user}`;
+	} else {
+		title.textContent = 'Todo App - Anonimus';
+	}
 
 	container.append(title);
 
@@ -51,6 +56,7 @@ const createButtons = () => {
 
 	const buttonReset = document.createElement('button');
 	buttonReset.classList.add('btn', 'btn-warning');
+	buttonReset.setAttribute('disabled', '');
 	buttonReset.textContent = 'Очистить';
 
 	form.append(buttonReset);

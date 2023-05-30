@@ -1,4 +1,4 @@
-import { addItem, createLine } from './createElements.js';
+import { addItem, addNumberRow } from './createElements.js';
 
 import { changeInput } from './events.js';
 
@@ -50,6 +50,8 @@ const getItemStorage = (user) => {
 	} else {
 		console.log('Нет сохраненного в ToDoList', storageList);
 	}
+
+	addNumberRow();
 };
 
 //setItemStorage добавление задач в сторадж

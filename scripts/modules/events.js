@@ -1,3 +1,5 @@
+import { addNumberRow } from "./createElements.js";
+
 const changeInput = () => {
 	const input = document.querySelector('.form-control');
 
@@ -42,7 +44,7 @@ const changeTaskStatus = (e, user) => {
 			task.status = true;
 		}
 	});
-	
+
 	localStorage.setItem(`${user}`, JSON.stringify(userTaskList));
 };
 
@@ -63,7 +65,11 @@ const deleteTask = (e, user) => {
 
 	userTaskList.splice(indexTask, 1);
 
+	localStorage.setItem(`${user}`, JSON.stringify(userTaskList));
+
 	rowParentNode.remove();
+
+	addNumberRow();
 };
 
 const deleteOverTask = (e, user) => {
@@ -83,7 +89,11 @@ const deleteOverTask = (e, user) => {
 
 	userTaskList.splice(indexTask, 1);
 
+	localStorage.setItem(`${user}`, JSON.stringify(userTaskList));
+
 	rowParentNode.remove();
+
+	addNumberRow();
 };
 
 export {

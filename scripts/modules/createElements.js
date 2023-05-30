@@ -118,6 +118,18 @@ const createLine = () => {
 	return td;
 };
 
+const addNumberRow = () => {
+	const td = document.getElementsByTagName('td');
+	const tdArray = Array.from(td);
+
+	let j = 1;
+
+	for (let i = 0; i < tdArray.length; i = i + 4) {
+		tdArray[i].textContent = j;
+		j++;
+	}
+}
+
 const addItem = (inputValue) => {
 	const td = createLine();
 
@@ -125,6 +137,8 @@ const addItem = (inputValue) => {
 	task.textContent = inputValue;
 
 	deleteInputValue();
+
+	addNumberRow();
 };
 
 export {
@@ -135,4 +149,5 @@ export {
 	createTable,
 	createLine,
 	addItem,
+	addNumberRow,
 };

@@ -4,6 +4,7 @@ import {
 	createInput,
 	createButtons,
 	createTable,
+	addNumberRow,
 } from './modules/createElements.js';
 
 import {
@@ -63,6 +64,8 @@ const user = prompt('Ваше имя:', '');
 				changeTaskStatus(e, user);
 			}
 		});
+
+		addNumberRow();
 
 	};
 

@@ -56,7 +56,7 @@ import {
 
 		const buttonReset = document.querySelector('.btn-warning');
 
-		buttonReset.addEventListener('click', () => {
+		buttonReset.addEventListener('click', (e) => {
 			e.preventDefault();
 			deleteInputValue();
 		});

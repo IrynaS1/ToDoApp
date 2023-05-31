@@ -56,7 +56,6 @@ const createButtons = () => {
 
 	const buttonReset = document.createElement('button');
 	buttonReset.classList.add('btn', 'btn-warning');
-	buttonReset.setAttribute('disabled', '');
 	buttonReset.textContent = 'Очистить';
 
 	form.append(buttonReset);

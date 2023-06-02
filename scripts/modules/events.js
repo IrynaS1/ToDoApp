@@ -3,9 +3,6 @@ import { addNumberRow } from "./createElements.js";
 const changeInput = () => {
 	const input = document.querySelector('.form-control');
 
-	const buttonSave = document.querySelector('.btn-primary');
-	buttonSave.removeAttribute('disabled');
-
 	const inputValue = input.value;
 
 	return inputValue;
@@ -16,13 +13,9 @@ const deleteInputValue = () => {
 
 	const buttonSave = document.querySelector('.btn-primary');
 
-	if (input.value !== '') {
-		buttonSave.setAttribute('disabled', '');
+	buttonSave.setAttribute('disabled', '');
 
-		input.value = '';
-	} else {
-		console.log('Нет ввода');
-	}
+	input.value = '';
 };
 
 const changeTaskStatus = (e, user) => {
@@ -62,7 +55,7 @@ const deleteTask = (e, user) => {
 
 	const indexTask = userTaskList.findIndex((task) => {
 		if (task.text === taskValue) {
-			return true;
+			return task;
 		}
 	});
 

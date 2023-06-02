@@ -41,17 +41,29 @@ import {
 
 		const input = document.querySelector('.form-control');
 
+
+		input.addEventListener('input', (e) => {
+			if (input.value !== '') {
+				const buttonSave = document.querySelector('.btn-primary');
+
+				buttonSave.removeAttribute('disabled');
+			} else {
+				console.log('Нет ввода');
+			}
+		});
+
 		input.addEventListener('change', (e) => {
 			e.preventDefault();
-			changeInput();
-			setItemStorage(user);
+
+			changeInput(e);
+			//setItemStorage(user);
 		});
 
 		const buttonSave = document.querySelector('.btn-primary');
 
 		buttonSave.addEventListener('click', (e) => {
 			e.preventDefault();
-			addItem(inputValue);
+			setItemStorage(user);
 		});
 
 		const buttonReset = document.querySelector('.btn-warning');

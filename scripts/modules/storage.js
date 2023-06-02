@@ -67,7 +67,7 @@ const setItemStorage = (user) => {
 	taskList.push(newTask);
 
 	localStorage.setItem(`${user}`, JSON.stringify(taskList));
-
+	
 	addItem(inputValue);
 };
 
